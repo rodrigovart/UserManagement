@@ -1,7 +1,11 @@
 # Cadastro de Usuário
 
 
-https://user-images.githubusercontent.com/64294078/176755820-021a5e23-1111-48d8-a256-04bffbf3f70d.mov
+
+https://user-images.githubusercontent.com/64294078/176756658-26c3e255-9917-4c93-b352-20433254a356.mov
+
+
+
 
 # Como rodar
 Abrir o simulador no Android Studio ou Xcode.
