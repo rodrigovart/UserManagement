@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:app/models/user.dart';
 import 'package:app/provider/users.dart';
 import 'package:app/routes/app_routes.dart';
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Users Management',
         theme: ThemeData(
-          primarySwatch: Colors.blueGrey,
+          primarySwatch: Colors.teal,
         ),
         routes: {
           AppRoutes.HOME: (_) => const UserList(),

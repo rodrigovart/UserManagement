@@ -38,7 +38,52 @@ class UserTitle extends StatelessWidget {
                 icon: const Icon(Icons.delete),
                 color: Colors.red,
                 onPressed: () {
-                  usersProvider.remove(usersProvider.byIndex(user.id!));
+                  showDialog(
+                    context: context,
+                    builder: (ctx) => AlertDialog(
+                      title: const Text('Deseja Excluir o Usuário?'),
+                      actions: <Widget>[
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.teal,
+                              fixedSize: const Size(50, 10),
+                              padding: const EdgeInsets.all(10)),
+                          onPressed: () {
+                            usersProvider.remove(user);
+                            Navigator.of(context).pop(true);
+                          },
+                          child: const Text('OK'),
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.redAccent,
+                              fixedSize: const Size(100, 10),
+                              padding: const EdgeInsets.all(10)),
+                          onPressed: () => Navigator.of(context).pop(false),
+                          child: const Text('Cancelar'),
+                        ),
+                      ],
+                    ),
+                  ).then((value) {
+                    if (value) {
+                      showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          title: const Text('Excluido!'),
+                          actions: <Widget>[
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.teal,
+                              fixedSize: const Size(50, 10),
+                              padding: const EdgeInsets.all(10)),
+                          onPressed: () => Navigator.of(context).pop(true),
+                          child: const Text('OK'),
+                        ),
+                          ],
+                        ),
+                      );
+                    }
+                  });
                 },
               ),
             ],

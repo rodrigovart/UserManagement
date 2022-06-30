@@ -1,4 +1,3 @@
-import 'package:app/models/user.dart';
 import 'package:app/provider/users.dart';
 import 'package:app/routes/app_routes.dart';
 import 'package:app/widgets/user_title.dart';
